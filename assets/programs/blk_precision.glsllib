@@ -27,4 +27,4 @@ precision highp float;
 //! FRAGMENT
 
 
-precision mediump float;
+precision highp float;

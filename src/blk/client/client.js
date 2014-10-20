@@ -34,7 +34,8 @@ goog.require('WTF.trace');
  * @param {string} uri Invoking URI.
  * @param {Object.<*>=} opt_args Key-value argument map.
  */
-blk.client.start = WTF.trace.instrument(function(
+blk.client.start = function(
+//blk.client.start = WTF.trace.instrument(function(
     doc, sourceMode, uri, opt_args) {
       goog.asserts.assert(!gf.SERVER);
       var dom = new goog.dom.DomHelper(doc);
@@ -54,6 +55,7 @@ blk.client.start = WTF.trace.instrument(function(
 
       // Start the game - it will decide what to do based on launchOptions/etc
       game.start();
-    }, 'blk.client.start');
+//    }, 'blk.client.start');
+}
 
 goog.exportSymbol('blk.client.start', blk.client.start);

@@ -177,6 +177,12 @@ compile_glsl(
     name='blk_glsl',
     srcs=[':all_glsl'],
     deps=[':all_glsllib'],
+    compiler_flags=[
+        '--variable_renaming=false',
+        '--pretty_print=true',
+        '--function_renaming=false',
+        '--consolidate_declarations=false'
+        ],
     compiler_js=GLSL_COMPILER_JS)
 file_set(
     name='blk_glsl_json',
