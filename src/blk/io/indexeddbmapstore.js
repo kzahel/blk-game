@@ -238,6 +238,7 @@ blk.io.IndexedDbMapStore.prototype.readChunk_ = function(entry) {
  * @private
  */
 blk.io.IndexedDbMapStore.prototype.writeChunk_ = function(entry) {
+    console.log('idx writeChunk')
   var transaction = this.db_.transaction([
     blk.io.IndexedDbMapStore.CHUNK_OBJECT_STORE_
   ], 'readwrite');

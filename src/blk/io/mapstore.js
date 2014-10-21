@@ -280,6 +280,8 @@ blk.io.MapStore.prototype.finishReadChunk = function(entry, error, data) {
  *     updated.
  */
 blk.io.MapStore.prototype.writeChunk = function(chunk) {
+    console.log('mapstore.writeChunk')
+debugger
   var deferred = new goog.async.Deferred();
   var entry = new blk.io.MapStore.QueueEntry(
       deferred,

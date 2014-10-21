@@ -190,9 +190,12 @@ blk.io.FileMapStore.prototype.processEntry = function(entry) {
           }, this);
       break;
     case blk.io.MapStore.QueueAction.WRITE_CHUNK:
+      console.log('filemapstore mapstore.queueaction.write_chunk')
       goog.asserts.assert(entry.data);
+      console.log('get data...')
       this.regionCache_.get(entry.x, entry.y, entry.z).addCallbacks(
           function(regionFile) {
+              console.log('got regionfiledata!')
             regionFile.writeChunkData(
                 entry.x, entry.y, entry.z, entry.data).addCallbacks(
                 function() {

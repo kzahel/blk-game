@@ -46,6 +46,8 @@ cd blk-game/
 # Run the setup script to initialize the repo and dependencies
 ./scripts/setup.sh
 
+(some headaches with python virtualenv may necessitate "source local_virtualenv/bin/activate; pip install twisted mutagen pillow mako")
+
 # This must be run each session:
 source blkrc
 

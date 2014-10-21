@@ -210,7 +210,7 @@ blk.game.fps.FpsClientController.prototype.processInput =
   // TODO(benvanik): track goog.events.KeyCodes.PAUSE to pause update loop
 
   // Show settings/etc
-  if (keyboardData.didKeyGoDown(goog.events.KeyCodes.O)) {
+  if (false && keyboardData.didKeyGoDown(goog.events.KeyCodes.O)) {
     this.game.playClick();
     this.game.showSettingsPopup();
     return true;
@@ -306,7 +306,10 @@ blk.game.fps.FpsClientController.prototype.drawWorld =
   var localPlayer = this.getLocalPlayer();
   if (localPlayer) {
     var camera = localPlayer.getCamera();
-    viewport.setFar(camera.getView().getDrawDistance());
+      var dontcull = true
+      if (dontcull) {
+          viewport.setFar(camera.getView().getDrawDistance()*100);
+      }
     viewport.setSize(display.getSize());
     camera.calculateViewport(viewport);
   } else {

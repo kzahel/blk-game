@@ -61,7 +61,8 @@ blk.physics.Movement.MAX_PITCH = 85 * Math.PI / 180;
  * @const
  * @type {number}
  */
-blk.physics.Movement.MAX_FLOAT_SPEED_ = 18;
+//blk.physics.Movement.MAX_FLOAT_SPEED_ = 18;
+blk.physics.Movement.MAX_FLOAT_SPEED_ = 8;
 
 
 /**

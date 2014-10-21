@@ -168,7 +168,8 @@ blk.env.ChunkView.MIN_CHUNK_RADIUS_XZ = 1;
  * @const
  * @type {number}
  */
-blk.env.ChunkView.MAX_CHUNK_RADIUS_XZ = 16;
+//blk.env.ChunkView.MAX_CHUNK_RADIUS_XZ = 16;
+blk.env.ChunkView.MAX_CHUNK_RADIUS_XZ = 4; // TODO(kzahel) grab from options
 
 
 /**

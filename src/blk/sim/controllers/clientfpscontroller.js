@@ -241,22 +241,22 @@ blk.sim.controllers.ClientFpsController.prototype.sampleMove_ = function(
   var moveMask = 0;
 
   // Keyboard move
-  if (keyboardData.isKeyDown(goog.events.KeyCodes.W)) {
+  if (keyboardData.isKeyDown(goog.events.KeyCodes.PERIOD)) {
     moveMask |= blk.sim.commands.PlayerMoveTranslation.NEG_Z;
   }
-  if (keyboardData.isKeyDown(goog.events.KeyCodes.S)) {
+  if (keyboardData.isKeyDown(goog.events.KeyCodes.E)) {
     moveMask |= blk.sim.commands.PlayerMoveTranslation.POS_Z;
   }
-  if (keyboardData.isKeyDown(goog.events.KeyCodes.A)) {
+  if (keyboardData.isKeyDown(goog.events.KeyCodes.O)) {
     moveMask |= blk.sim.commands.PlayerMoveTranslation.NEG_X;
   }
-  if (keyboardData.isKeyDown(goog.events.KeyCodes.D)) {
+  if (keyboardData.isKeyDown(goog.events.KeyCodes.U)) {
     moveMask |= blk.sim.commands.PlayerMoveTranslation.POS_X;
   }
-  if (keyboardData.isKeyDown(goog.events.KeyCodes.Q)) {
+  if (keyboardData.isKeyDown(goog.events.KeyCodes.SPACE)) {
     moveMask |= blk.sim.commands.PlayerMoveTranslation.POS_Y;
   }
-  if (keyboardData.isKeyDown(goog.events.KeyCodes.Z)) {
+  if (keyboardData.isKeyDown(goog.events.KeyCodes.J)) {
     moveMask |= blk.sim.commands.PlayerMoveTranslation.NEG_Y;
   }
 
@@ -383,14 +383,24 @@ blk.sim.controllers.ClientFpsController.prototype.sampleActions_ =
 
   var actions = 0;
 
-  if (keyboardData.didKeyGoDown(goog.events.KeyCodes.E)) {
+  if (keyboardData.didKeyGoDown(goog.events.KeyCodes.I)) {
     actions |= blk.sim.commands.PlayerMoveAction.USE_NORMAL_DOWN;
     actions |= blk.sim.commands.PlayerMoveAction.USE_NORMAL;
-  } else if (keyboardData.isKeyDown(goog.events.KeyCodes.E)) {
+  } else if (keyboardData.isKeyDown(goog.events.KeyCodes.I)) {
     actions |= blk.sim.commands.PlayerMoveAction.USE_NORMAL;
-  } else if (keyboardData.didKeyGoUp(goog.events.KeyCodes.E)) {
+  } else if (keyboardData.didKeyGoUp(goog.events.KeyCodes.I)) {
     actions |= blk.sim.commands.PlayerMoveAction.USE_NORMAL_UP;
   }
+
+  if (keyboardData.didKeyGoDown(goog.events.KeyCodes.A)) {
+    actions |= blk.sim.commands.PlayerMoveAction.USE_ALTERNATE_DOWN;
+    actions |= blk.sim.commands.PlayerMoveAction.USE_ALTERNATE;
+  } else if (keyboardData.isKeyDown(goog.events.KeyCodes.A)) {
+    actions |= blk.sim.commands.PlayerMoveAction.USE_ALTERNATE;
+  } else if (keyboardData.didKeyGoUp(goog.events.KeyCodes.A)) {
+    actions |= blk.sim.commands.PlayerMoveAction.USE_ALTERNATE_UP;
+  }
+
 
   // Right-click emulation
   var useBits = blk.sim.commands.PlayerMoveAction.USE_NORMAL;
